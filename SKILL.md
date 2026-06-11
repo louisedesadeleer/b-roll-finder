@@ -38,7 +38,8 @@ Ask these on first run and write the answers into the taste profile (TASTE.md sh
 1. **Audio** — does the user talk over b-roll (strip ALL audio: `ffmpeg -an`) or want the clip's sound?
 2. **Stills motion** — static images get a **very subtle Ken Burns zoom-in by default** (~1.5%/sec, centered, capped ~2%/sec); offer opt-out to fully static. **Method matters more than the setting** — see "Stills motion" below.
 3. **Source attribution** — credit each b-roll's source in small text bottom-right? Options: `off` · `white` · `black` · `auto` (contrast-pick per clip). The credit is the source's canonical name + platform ("Vinexposium / YouTube", "Decanter") — short, never a URL. If the footage already carries its own badge bottom-right, move the credit bottom-left for that clip. Note: an on-screen credit is etiquette, not a license — official/authoritative sources remain the real copyright posture.
-4. **AI-generated b-roll** — off by default; opt-in only for beats with no real footage, via a quality model the user names. Never silently substitute cheap AI stock.
+4. **Concept motion graphics (Remotion)** — generate on-brand motion graphics for concept/stat/chart beats? If yes, ask for the path to an EXISTING Remotion project (+ brand tokens) and write it into the profile. Rendering a comp in an existing project is part of the lean path; **scaffolding a new project is a one-time setup step that needs explicit permission** (never mid-run). No project + no permission → concept beats use real authoritative footage or get flagged, never silently skipped.
+5. **AI-generated b-roll** — off by default; opt-in only for beats with no real footage, via a quality model the user names. Never silently substitute cheap AI stock.
 
 ## 🔓 Standing authorization — invoking the skill IS the permission
 
@@ -96,7 +97,7 @@ Classify EVERY moment before searching:
 |---|---|---|
 | **Receipts** | Time-sensitive — drama, news, complaints, a current claim/stat | Tweets / article headlines / reviews, recency-sorted, captured as clean screenshots |
 | **Entity** | A **person**, a **physical product**, or a **historical moment** | The official / authoritative channel — the *canonical* clip, not a random upload |
-| **Concept** | An abstract idea you'd have to *draw* (a process, a mental model, a stat) | Custom motion-graphics (e.g. Remotion) in your brand style — or real footage from the authoritative source |
+| **Concept** | An abstract idea you'd have to *draw* (a process, a mental model, a stat) | Custom motion-graphics (e.g. Remotion) in your brand style — the DEFAULT when the profile has a Remotion project path — or real footage from the authoritative source |
 
 **⛔ Cards never replace real footage of a literal thing.** If the beat names a concrete entity (grape varieties, a product, a place) and real footage exists, a generated text card is a FAIL — even if the user's fingerprint shows they like cards. Cards are for ideas with NO literal footage. (2026-06-11: a "three grapes" beat got a navy text card while the official film had the actual clusters — wrong.)
 | **Cultural / Meme** | A creator clip or joke where *taste* decides | **NEVER searched or fetched by the agent.** Propose the MOMENT + register ("punchline at 2:31, deadpan") in the plan; the user supplies the meme from their library — or strikes the beat. Agent-found memes have failed every time they've been tried. |
