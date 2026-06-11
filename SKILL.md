@@ -159,6 +159,7 @@ After every render, extract a frame at **every beat's midpoint AND every joint**
 5. A generated card where the beat names a literal, filmable thing
 6. Template-looking composites (two portraits side by side, collage cards)
 7. Letterboxing, tiny floating content, or visible blur-edge framing errors
+8. A split-second sliver of talking head (<1s) between two cutaways — connect them: extend the first beat to the second's start (never start the second early)
 
 Grade the grid against this list line by line — "looks fine" without the list is how watermarked clips ship.
 
