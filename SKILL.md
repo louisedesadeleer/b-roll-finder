@@ -111,8 +111,9 @@ Check **time-sensitivity first** — a dated tweet from this month beats a years
 
 ## Placement timing — land ON or just AFTER the word, never before
 
-- Anchor to when the keyword is **spoken**, then add a small lead (~+0.2–0.5s) so the cut lands as/just after it. B-roll *before* the word reads as a mistake.
-- Use **word-level timestamps** (e.g. Whisper `--word-timestamps`) for precise anchoring — the transcript cue start is usually a beat too early.
+- Anchor to when the keyword is **spoken**, then add a small lead (~+0.2s) so the cut lands as/just after it. B-roll *before* the word reads as a mistake.
+- **Timing engine: forced alignment, not Whisper timestamps.** Whisper word times are ±100–300ms with pauses embedded inside word durations — fine for reading, not for anchoring. Use **MFA (Montreal Forced Aligner)**: Whisper produces the transcript *text*, MFA aligns it to the audio and returns ~10–20ms word boundaries (with true silences as explicit intervals). The keyword's MFA end time + ~0.2s is the anchor. (Same architecture as the [cut-video](https://github.com/louisedesadeleer/cut-video) skill — see its README for the full MFA recipe.)
+- Whisper `--word-timestamps` is the fallback when MFA isn't installed — bias later (+0.3–0.5s) since whisper word-ends run early, and say so in the plan.
 - For punchlines, land on the beat *after* the punchline.
 - **Connect adjacent b-rolls:** if two cutaways sit closer than ~a half-sentence apart, extend the first to the second's start — a <2s flash of the speaker's face between them reads as an error. (Extend the earlier clip; never start the next one before its keyword.)
 
@@ -155,7 +156,8 @@ After every render, extract a frame at **every beat's midpoint AND every joint**
 
 ## Tools
 
-- **Transcription:** GPU Whisper (word-level timestamps).
+- **Transcription:** GPU Whisper for transcript text (large model — the transcript drives *understanding*, so text accuracy matters).
+- **Anchor timing:** MFA forced alignment (~10–20ms word boundaries); Whisper word-timestamps as fallback.
 - **Search / download:** `yt-dlp` (no API key); headless browser + CDP for public-page screenshots (consent walls: click accept in every frame context, verify visually).
 - **Motion-graphics:** Remotion (or similar), rendered full-bleed + silent.
 - **Stills zoom:** PIL float-box resize piped to x264 (sub-pixel; never `zoompan`).

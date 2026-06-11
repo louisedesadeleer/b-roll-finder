@@ -133,7 +133,7 @@ Every moment is split by **what decides the right clip**:
 
 ## 🛠️ Under the hood
 
-- **Transcription:** GPU Whisper (word-level timestamps) for precise anchoring.
+- **Transcription & timing:** GPU Whisper for the transcript *text*; **MFA forced alignment** for anchor timing (~10–20ms word boundaries — Whisper timestamps are ±100–300ms and only the fallback). Same timing engine as [cut-video](https://github.com/louisedesadeleer/cut-video).
 - **Search & download:** `yt-dlp` (no API key) for YouTube; headless browser for public-page screenshots (with consent-wall handling via CDP — it clicks "accept" in every frame context and visually verifies each capture).
 - **Motion-graphics:** Remotion, rendered full-bleed and silent in your brand style.
 - **Stills motion:** a very subtle Ken Burns zoom on static images by default — rendered **sub-pixel** (float-precision Lanczos per frame), never ffmpeg `zoompan` (integer-stepped = shaky). Opt out to fully static at onboarding.
