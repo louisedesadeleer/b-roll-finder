@@ -1,3 +1,8 @@
+---
+name: find-broll
+description: Source b-roll for a video edit — classify each moment, scope the search, return vetted candidates, place on the word. Use when the user says "find b-roll", "/find-broll", "source clips for this edit", or wants footage/memes/screenshots to lay over a talking-head video.
+---
+
 # B-Roll Finder — skill methodology
 
 > A reusable methodology for sourcing and placing b-roll on talking-head video.
