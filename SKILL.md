@@ -60,7 +60,7 @@ The skill earned trust through restraint; heavyweight process makes output WORSE
 - **Research depth is bounded at plan time.** Verify referents enough to source accurately; do NOT exhaust every sourcing route before the plan. The escalation ladder fires only AFTER the user has agreed a beat and the easy routes failed — never speculatively.
 - **Per-beat time box:** if a single beat's sourcing exceeds ~5 minutes, place the best-available candidate or drop the beat and flag it. One stubborn artifact must not stall the edit.
 - **One verify pass + targeted fixes** beats endless polishing. Render → grid → fix the failures → re-verify only the fixed beats.
-- **Fail twice → switch method or drop.** If the same approach fails two times in a row (a capture that won't save, a download that errors), do NOT retry a third time — switch to a different method or drop the beat and flag it. (Louise, mid-run: "stop doing things that keep failing, just skip to save time.")
+- **NO RETRIES — first failure switches, second failure drops.** A method that fails once is NOT retried (not with tweaked flags, not "one more time") — switch to a different method immediately. If the second method also fails, DROP the beat, flag it in the plan, move on. A beat is never worth a third attempt; the edit ships without it. This applies to everything: captures, downloads, renders, browser actions. (Louise: "stop doing things that keep failing, just skip to save time.")
 - **Never auto-install heavy dependencies mid-run** (conda, aligners, etc.) — use the fallback, note it, offer the install after delivery.
 
 ### Source by SOURCE, not by beat (the big sourcing speed-up)
